@@ -24,8 +24,11 @@ namespace Vsite.CSharp
 
         public static void IspišiFunkcijeZasebno(Funkcija fja, double x1, double x2, int n)
         {
-            // TODO: Pomoću metode GetInvocationList dohvatiti sve delegatske funkcije zasebno i za svaku ispisati vrijednosti u traženom intervalu
-
+            //  Pomoću metode GetInvocationList dohvatiti sve delegatske funkcije zasebno i za svaku ispisati vrijednosti u traženom intervalu
+            foreach (Funkcija f in fja.GetInvocationList())
+            {
+                IspišiFunkciju(f, x1, x2, n);
+            }
         }
 
         static void Main(string[] args)
